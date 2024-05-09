@@ -23,20 +23,20 @@ const createGif = async function (body) {
   encoder.start();
   encoder.setRepeat(0);
   // Uncomment & comment out below line for localfile system
-  // encoder.setDelay(1000); 
-  encoder.setDelay(body.frame_rate * 1000);
+   encoder.setDelay(10); 
+  //encoder.setDelay(body.frame_rate * 1000);
   encoder.setQuality(10);
 
   // Uncomment & comment out  below line for localfile system
-  // const imgList = fs.readdirSync('./public/images/');
-  const imgList = body.image;
+   const imgList = fs.readdirSync('./public/images/');
+  //const imgList = body.image;
   console.log('imgList =======', imgList);
 
   try {
     for (const f of imgList) {
       // Uncomment & comment out  below line for localfile system 
-      // const image = await loadImage(`./public/images/${f}`);
-      const image = await loadImage(`${f}`);
+      const image = await loadImage(`./public/images/${f}`);
+      //const image = await loadImage(`${f}`);
       ctx.drawImage(image, 0, 0, image.width, image.height, 0, 0, canvas.width, canvas.height);
       encoder.addFrame(ctx);
     }

@@ -1,0 +1,18 @@
+{
+  "name": "gif",
+  "version": "1.0.0",
+  "description": "Creating api for gif by shakil at shanviatech on 08 May 2024.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Shakil Ahmad",
+  "license": "ISC",
+  "dependencies": {
+    "canvas": "^2.11.2",
+    "express": "^4.19.2",
+    "gifencoder": "^2.0.1",
+    "nodemon": "^3.1.0",
+    "path": "^0.12.7"
+  }
+}

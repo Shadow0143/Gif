@@ -18,8 +18,20 @@ const gif = async (req, res) => {
     }
 }
 
+const remixCreate = async (req, res) => {
+    try {
+        const body = req?.body;
+        const data = await MainService.remixCreate(body);
+        return res.json(data);
+    } catch (error) {
+        console.log('Error:', error);
+        return res.status(500).json({ error: 'Internal Server Error' });
+    }
+}
+
 module.exports = {
 
     welcome,
-    gif
+    gif,
+    remixCreate
 }

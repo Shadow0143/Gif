@@ -1,9 +1,10 @@
 const fs = require('fs');
 const GIFEncoder = require('gifencoder');
 const { createCanvas, loadImage } = require('canvas');
+const remixScript = require('../public/Js/remixScript');
 // const path = require('path');
 
-
+ 
 // const createGif = async function (body) {
 //   const canvas = createCanvas(body.width, body.height);
 //   const ctx = canvas.getContext('2d');
@@ -89,7 +90,14 @@ const createGif = async function (body) {
 };
 
 
-module.exports = { createGif };
+const remixCreate = async function (body) {
+  console.log('body',body);
+}
+
+module.exports = { 
+  createGif,
+  remixCreate
+ };
 
 
 
